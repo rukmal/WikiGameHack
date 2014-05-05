@@ -12,18 +12,28 @@ document.body.innerHTML += jqueryhtml;
 var checkInterval = 500 // ms
 
 setInterval(function () {
+
 	// Making sure the game is on the wiki page
 	if ($('#wiki').length) {
+
 		// Getting the endpage url
 		var endURL = $('#endpagelink0').children('a').attr('href');
 		var rawWikiURL = endURL.split('.org')[1];
+
+		// Constructing the HTML to be added to the page
 		var linkID = 'cheaterlink';
-		var appendHTML = '<a href="' + rawWikiURL + '" id="'+ linkID +'">';
-		console.log($('#' + linkID).length);
+		var appendHTML = '<a href="' + rawWikiURL + '" id="'+ linkID +'"></a>';
+
+		var wikiBody = $('#wiki').contents().find('body');
+		// Checking if the link has already been appended
 		if ($('#' + linkID).length === 0) {
-			$('#wiki').find('body').append(appendHTML);
-			console.log('here');
+			wikiBody.append(appendHTML);
+			console.log(wikiBody.contents());
 		}
-		console.log($('#wiki').contents().find('#' + linkID));
+
+		// Clicking on the winning URL
+		$('#' + linkID).each(function () {
+			$(this).click();
+		});
 	}
 }, checkInterval);
