@@ -16,7 +16,7 @@ var done = false;
 setInterval(function () {
 
 	// Making sure the game is on the wiki page
-	if ($('#wiki').length) {
+	if ($('#wiki')) {
 		if (!done) {
 			// Getting the endpage url
 			var endURL = $('#endpagelink0').children('a').attr('href');
