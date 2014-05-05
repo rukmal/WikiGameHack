@@ -11,29 +11,23 @@ document.body.innerHTML += jqueryhtml;
 // Setting the interval to check if the game has started
 var checkInterval = 500 // ms
 
+var done = false;
+
 setInterval(function () {
 
 	// Making sure the game is on the wiki page
 	if ($('#wiki').length) {
-
-		// Getting the endpage url
-		var endURL = $('#endpagelink0').children('a').attr('href');
-		var rawWikiURL = endURL.split('.org')[1];
-
-		// Constructing the HTML to be added to the page
-		var linkID = 'cheaterlink';
-		var appendHTML = '<a href="' + rawWikiURL + '" id="'+ linkID +'"></a>';
-
-		var wikiBody = $('#wiki').contents().find('body');
-		// Checking if the link has already been appended
-		if ($('#' + linkID).length === 0) {
-			wikiBody.append(appendHTML);
-			console.log(wikiBody.contents());
+		if (!done) {
+			// Getting the endpage url
+			var endURL = $('#endpagelink0').children('a').attr('href');
+			var rawWikiURL = endURL.split('.org')[1];
+			// if not, change iframe source url
+			$('#wiki').attr('src', rawWikiURL);
+			done = true;
 		}
-
-		// Clicking on the winning URL
-		$('#' + linkID).each(function () {
-			$(this).click();
-		});
+		// }
+	} else {
+		done = false;
+		// If not, go to the wiki page
 	}
 }, checkInterval);
