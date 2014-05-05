@@ -4,11 +4,15 @@
  * @description Short JS script to cheat on the Wikipedia Game (http://thewikigame.com/)
  */
 
+// Appending jQuery to the DOM
 var jqueryhtml = '<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>';
 document.body.innerHTML += jqueryhtml;
 
-setInterval(function () {
-	var outerhtml = $('#wiki').contents();
+// Setting the interval to check if the game has started
+var checkInterval = 500 // ms
 
-	console.log(outerhtml);
-}, 1000);
+setInterval(function () {
+	var popup = $('#colorbox').css('display');
+
+	console.log(popup);
+}, checkInterval);
