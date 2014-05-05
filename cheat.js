@@ -1,3 +1,7 @@
-var wikiFrame = getElementByID('wiki');
+var jqueryhtml = '<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>';
 
-console.log(wikiFrame);
+document.getElementsByTagName('body').appendChild(jqueryhtml);
+
+var outerhtml = $('#wiki').contents();
+
+console.log(outerhtml);
