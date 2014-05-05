@@ -12,7 +12,7 @@ document.body.innerHTML += jqueryhtml;
 var checkInterval = 500 // ms
 
 setInterval(function () {
-	var popup = $('#colorbox');
+	var popup = $('#colorbox').css();
 
 	console.log(popup);
 }, checkInterval);
