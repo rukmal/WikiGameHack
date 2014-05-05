@@ -5,8 +5,10 @@
  */
 
 var jqueryhtml = '<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>';
-document.getElementsByTagName('body').appendChild(jqueryhtml);
+document.body.innerHTML += jqueryhtml;
 
-var outerhtml = $('#wiki').contents();
+setInterval(function () {
+	var outerhtml = $('#wiki').contents();
 
-console.log(outerhtml);
+	console.log(outerhtml);
+}, 1000);
