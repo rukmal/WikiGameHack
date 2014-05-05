@@ -21,13 +21,15 @@ setInterval(function () {
 			// Getting the endpage url
 			var endURL = $('#endpagelink0').children('a').attr('href');
 			var rawWikiURL = endURL.split('.org')[1];
-			// if not, change iframe source url
-			$('#wiki').attr('src', rawWikiURL);
+			// Change iframe source url
+			$('#wiki').attr({
+				src: rawWikiURL
+			});
 			done = true;
 		}
 		// }
 	} else {
-		done = false;
 		// If not, go to the wiki page
+		done = false;
 	}
 }, checkInterval);
