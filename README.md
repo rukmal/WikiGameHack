@@ -1,6 +1,6 @@
 # Wiki Game Hack
 
-A little hack to (always) win the (Wikipedia Racing Game)[http://thewikirace.com].
+A little hack to (always) win the [Wikipedia Racing Game](http://thewikigame.com).
 
 ## Instructions
 
